@@ -1,0 +1,10 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite icon-1x" width="64"  height="64" ><defs><symbol id="tv-lcd" viewBox="0 0 64 64">
+  <title>LCD TV</title>
+  <desc>LCD TV symbol</desc>
+  <g fill="currentColor">
+    <rect x="15" y="19" width="34" height="20"></rect>
+    <path d="M53,43V15H11v28h15l1,3h-7l-1,2h26l-1-2h-7l1-3H53z M13,41V17h38v24H13z"></path>
+  </g>
+ </symbol></defs>
+									<use xlink:href="#tv-lcd"></use>
+								</svg>

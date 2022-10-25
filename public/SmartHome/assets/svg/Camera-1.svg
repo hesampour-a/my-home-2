@@ -1,0 +1,9 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite" width="64"  height="64" ><defs><symbol id="camera" viewBox="0 0 64 64">
+  <title>Camera</title>
+  <desc>Camera symbol</desc>
+  <g fill="currentColor">
+    <polygon points="5,39 17,36 25,44 22,57"></polygon>
+    <path d="M52,50h3V33h-3v7h-6l-4-4l12-12L38,7L14,30l17,17l9-9l5,5h7V50z M36,35c-1.7,0-3-1.3-3-3c0-1.7,1.3-3,3-3
+		s3,1.3,3,3C39,33.7,37.7,35,36,35z"></path>
+  </g>
+ </symbol></defs><use xlink:href="#camera"></use></svg>

@@ -1,0 +1,8 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite" width="64"  height="64" ><defs><symbol id="logout" viewBox="0 0 64 64">
+  <title>Logout</title>
+  <desc>Logout symbol</desc>
+  <g fill="currentColor">
+    <path d="M39,14.28v7.77c3.6,2.31,6,6.34,6,10.94c0,7.18-5.82,13-13,13s-13-5.82-13-13c0-4.6,2.4-8.63,6-10.94v-7.77C17.41,17.12,12,24.42,12,33c0,11.05,8.95,20,20,20s20-8.95,20-20C52,24.42,46.59,17.12,39,14.28z"></path>
+    <rect x="28" y="11" width="8" height="18"></rect>
+  </g>
+ </symbol></defs><use xlink:href="#logout"></use></svg>

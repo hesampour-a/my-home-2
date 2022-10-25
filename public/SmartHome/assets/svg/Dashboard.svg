@@ -1,0 +1,12 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite" width="64"  height="64" ><defs><symbol id="dashboard" viewBox="0 0 64 64">
+  <title>Dashboard</title>
+  <desc>Dashboard symbol</desc>
+  <g fill="currentColor">
+    <rect x="26" y="36" width="29" height="16"></rect>
+    <rect x="9" y="22" width="14" height="30"></rect>
+    <rect x="26" y="22" width="13" height="11"></rect>
+    <rect x="42" y="22" width="13" height="11"></rect>
+    <path d="M9,12v7h46v-7H9z M41.5,17c-0.83,0-1.5-0.67-1.5-1.5s0.67-1.5,1.5-1.5s1.5,0.67,1.5,1.5S42.33,17,41.5,17z
+		 M46.5,17c-0.83,0-1.5-0.67-1.5-1.5s0.67-1.5,1.5-1.5s1.5,0.67,1.5,1.5S47.33,17,46.5,17z M51.5,17c-0.83,0-1.5-0.67-1.5-1.5s0.67-1.5,1.5-1.5s1.5,0.67,1.5,1.5S52.33,17,51.5,17z"></path>
+  </g>
+ </symbol></defs><use xlink:href="#dashboard"></use></svg>

@@ -1,0 +1,5 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="64"  height="64" ><defs><symbol id="icon-dot" viewBox="0 0 64 64">
+    <g class="icon-dot" fill="currentColor">
+     <circle cx="56" cy="8" r="6"></circle>
+    </g>
+ </symbol></defs><use class="icon-dot" xlink:href="#icon-dot"></use></svg>

@@ -1,0 +1,13 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite icon-1x" width="64"  height="64" ><defs><symbol id="garage" viewBox="0 0 64 64">
+  <title>Garage</title>
+  <desc>Garage symbol</desc>
+  <g fill="currentColor">
+    <polygon points="10,22 32,15 54,22 54,26 32,19 10,26"></polygon>
+    <polygon points="15,26.4 15,47 21,47 21,31 43,31 43,47 49,47 49,26.4 32,21"></polygon>
+    <rect x="23" y="38" width="18" height="3"></rect>
+    <rect x="23" y="33" width="18" height="3"></rect>
+    <rect x="23" y="43" width="18" height="3"></rect>
+  </g>
+ </symbol></defs>
+									<use xlink:href="#garage"></use>
+								</svg>

@@ -1,0 +1,16 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite" width="64"  height="64" ><defs><symbol id="alert" viewBox="0 0 64 64">
+  <title>Alert</title>
+  <desc>alert symbol</desc>
+  <g fill="currentColor">
+    <path d="M50,40c-2.2,0-4-1.8-4-4v-9c0-7.1-5.2-12.9-12-13.8c0,0,0-2.2-2-2.2s-2,2.2-2,2.2c-6.8,1-12,6.8-12,13.8v9
+		c0,2.2-1.8,4-4,4h-1v5h38v-5H50z"></path>
+    <path d="M32,52c3,0,5-2,5-5H27C27,50,29,52,32,52z"></path>
+  </g>
+ </symbol></defs>
+								<use xlink:href="#alert"></use>
+								<svg class="text-danger"><defs><symbol id="icon-dot" viewBox="0 0 64 64">
+    <g class="icon-dot" fill="currentColor">
+     <circle cx="56" cy="8" r="6"></circle>
+    </g>
+ </symbol></defs><use class="icon-dot" xlink:href="#icon-dot"></use></svg>
+							</svg>

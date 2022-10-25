@@ -1,0 +1,13 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite" width="64"  height="64" ><defs><symbol id="thermometer" viewBox="0 0 64 64">
+  <title>Thermometer</title>
+  <desc>Thermometer symbol</desc>
+  <g fill="currentColor">
+    <path d="M41,30.84V18c0-5.52-4.48-10-10-10c-5.52,0-10,4.48-10,10v12.84c-3.06,2.75-5,6.72-5,11.16c0,8.28,6.72,15,15,15
+		c8.28,0,15-6.72,15-15C46,37.56,44.06,33.59,41,30.84z M31,53c-6.08,0-11-4.93-11-11c0-3.86,1.99-7.25,5-9.21V18c0-3.31,2.69-6,6-6
+		s6,2.69,6,6v14.79c3.01,1.96,5,5.35,5,9.21C42,48.07,37.07,53,31,53z"></path>
+    <path d="M33.5,35.47V23h-5v12.47C25.87,36.48,24,39.02,24,42c0,3.87,3.13,7,7,7c3.87,0,7-3.13,7-7C38,39.02,36.13,36.48,33.5,35.47z"></path>
+    <rect x="44" y="15" width="8" height="2"></rect>
+    <rect x="44" y="21" width="8" height="2"></rect>
+    <rect x="44" y="27" width="8" height="2"></rect>
+  </g>
+ </symbol></defs><use xlink:href="#thermometer"></use></svg>

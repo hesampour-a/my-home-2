@@ -1,0 +1,12 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite icon-1x" width="64"  height="64" ><defs><symbol id="home-fridge" viewBox="0 0 64 64">
+  <title>Home fridge</title>
+  <desc>Home fridge symbol</desc>
+  <g fill="currentColor">
+    <rect x="19" y="52" width="26" height="2"></rect>
+    <path d="M19,10v3h26v-3H19z M23,12h-2v-1h2V12z M43,12h-5v-1h5V12z"></path>
+    <path d="M19,14v22h26V14H19z M23,34h-2v-9h2V34z"></path>
+    <path d="M19,37v14h26V37H19z M23,45h-2v-6h2V45z"></path>
+  </g>
+ </symbol></defs>
+									<use xlink:href="#home-fridge"></use>
+								</svg>

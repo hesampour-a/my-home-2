@@ -1,0 +1,8 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="icon-sprite" width="64"  height="64" ><defs><symbol id="info" viewBox="0 0 64 64">
+  <title>Info</title>
+  <desc>Info symbol</desc>
+  <g fill="currentColor">
+    <path d="M32,45c-2,4,3,2,5,0c2-2,5,0,2,3c-10,10-22,6-19,0.1L28,29c2.5-4.7-2-3-5,0c-2,2-5,0-2-3c12-12,21-4,18.8,0.9L32,45z"></path>
+    <circle cx="39" cy="13" r="5"></circle>
+  </g>
+ </symbol></defs><use xlink:href="#info"></use></svg>
