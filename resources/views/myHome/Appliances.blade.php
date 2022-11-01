@@ -4,14 +4,16 @@
 <div class="container-fluid px-4 px-sm-5">
     <div class="row">
         <!-- Appliances  START -->
+        <!-- Washing machine  START -->
+        @foreach ($washingMachines as $washingMachine)
         <div class="col-sm-12 col-md-6">
-            <!-- Washing machine  START -->
-            <div class="card active" data-unit="wash-machine">
+
+            <div class="card active" data-unit="{{ $washingMachine->name }}">
                 <ul class="list-group borderless">
                     <li class="list-group-item align-items-center">
                         <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Wash machine.svg') }}" alt="Cameras">
 
-                        <h5>ماشین لباسشویی</h5>
+                        <h5>{{$washingMachine->persianName}}</h5>
                         <p class="ml-auto status">روشن</p>
                     </li>
                 </ul>
@@ -20,33 +22,34 @@
                     <ul class="list-group borderless px-1">
                         <li class="list-group-item pb-0">
                             <p class="specs">برنامه شست و شو</p>
-                            <p class="ml-auto mb-0 text-primary">Cotton Quick</p>
+                            <p class="ml-auto mb-0 text-primary">{{ $washingMachine->washingProgram }}</p>
                         </li>
                         <li class="list-group-item pb-0">
                             <p class="specs">وزن</p>
-                            <p class="ml-auto mb-0 text-primary">10.5 lb <small class="text-muted">(4.76 kg)</small></p>
+                            <p class="ml-auto mb-0 text-primary">{{ $washingMachine->weight }}kg </p>
                         </li>
                         <li class="list-group-item">
                             <p class="specs">زمان باقیمانده</p>
-                            <p id="wash-machine" class="ml-auto mb-0">00:00:46</p>
+                            <p id="wash-machine" class="ml-auto mb-0">{{ $washingMachine->timeRemaining }}</p>
                         </li>
-                        <li class="list-group-item pb-4 timer-controls" data-controls="wash-machine">
-                            <button data-action="pause" type="button" class="btn btn-primary btn-block wash-control" style="display: block;">توقف</button>
-                            <button data-action="resume" type="button" class="btn btn-secondary btn-block mt-0 wash-control">ادامه</button>
-                        </li>
+
                     </ul>
                 </div>
             </div>
-            <!-- Washing machine  END -->
+
         </div>
+        @endforeach
+        <!-- Washing machine  END -->
+        <!-- Fridge  START -->
+        @foreach ($fridges as $fridge)
         <div class="col-sm-12 col-md-6">
-            <!-- Fridge  START -->
-            <div class="card active" data-unit="home-fridge">
+
+            <div class="card active" data-unit="{{ $fridge->name }}">
                 <ul class="list-group borderless">
                     <li class="list-group-item align-items-center">
                         <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Home fridge.svg') }}" alt="Cameras">
 
-                        <h5>یخچال</h5>
+                        <h5>{{ $fridge->persianName }}</h5>
                         <p class="ml-auto status">روشن</p>
                     </li>
                 </ul>
@@ -58,92 +61,75 @@
                         </li>
                         <li class="list-group-item d-flex flex-column pb-4">
                             <p class="mr-auto mt-2 mb-0 display-5">
-                                <span id="fridge-temp-F">5</span><sup>°C</sup>
+                                <span id="fridge-temp-F">{{$fridge->temperature}}</span><sup>°C</sup>
                             </p>
                         </li>
                     </ul>
                     <div class="p-4" style="position:relative;">
-                        <input type="range" class="form-range" id="fridge-temp" min="1" max="20" step="1" value="2" data-orientation="vertical">
+                        <form action="{{route('fridgeTeperatureUpdate',$fridge->id)}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <input type="range" name='dimer' class="form-range" id="fridge-temp" min="1" max="20" step="1" value="{{$fridge->temperature}}" data-orientation="vertical" onchange="this.form.submit()">
+                        </form>
                     </div>
                 </div>
             </div>
-            <!-- Fridge  END -->
         </div>
+        @endforeach
+        <!-- Fridge  END -->
+        <!-- TV  START -->
+        @foreach ($tvs as $tv)
         <div class="col-sm-12 col-md-6">
-            <!-- TV1  START -->
-            <div class="card active" data-unit="tv-lcd-1">
+            <div class="card active" data-unit="tv-lcd-{{ $tv->id }}">
+
                 <ul class="list-group borderless">
                     <li class="list-group-item align-items-center">
                         <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/LCD TV.svg') }}" alt="Cameras">
 
-                        <h5>تلویزیون محمد</h5>
-                        <p class="ml-auto status">روشن</p>
-                    </li>
-                </ul>
-                <hr class="my-0">
-                <ul class="list-group borderless px-1">
-                    <li class="list-group-item pb-0">
-                        <p class="specs">کانال</p>
-                        <p class="ml-auto mb-0 text-primary">ورزش</p>
-                    </li>
-                    <li class="list-group-item pb-4">
-                        <p class="specs">ضبط</p>
-                        <p class="ml-auto mb-0 text-primary text-off">خاموش</p>
-                    </li>
-                </ul>
-            </div>
-            <!-- TV1  END -->
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <!-- TV2  START -->
-            <div class="card active" data-unit="tv-lcd-2">
-                <!-- TV2 switch START -->
-                <ul class="list-group borderless">
-                    <li class="list-group-item align-items-center">
-                        <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/LCD TV.svg') }}" alt="Cameras">
-
-                        <h5>تلویزیون هال</h5>
+                        <h5>{{$tv->persianName}}</h5>
                         <label class="switch ml-auto checked">
-                            <input type="checkbox" id="tv-lcd-2" checked="checked">
+                            <form action="{{route('tvStatusUpdate',$tv->id)}}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <input type="checkbox" id="tv-lcd-{{ $tv->id }}" {{ $tv->status === '1' ? 'checked' : '' }} onchange="this.form.submit()">
+                                <input id="status" name="status" value={{ $tv->status }} hidden>
+                            </form>
                         </label>
                     </li>
                 </ul>
-                <!-- TV2 switch END -->
+
                 <div class="only-if-active">
                     <hr class="my-0">
                     <ul class="list-group borderless px-1">
                         <li class="list-group-item pb-0">
                             <p class="specs">کانال</p>
-                            <p class="ml-auto mb-0 text-primary">پویا</p>
+                            <p class="ml-auto mb-0 text-primary">{{ $tv->channel }}</p>
                         </li>
-                        <li class="list-group-item pb-0">
-                            <p class="specs">ضبط</p>
-                            <div class="btn-group btn-group-toggle ml-auto py-1" data-toggle="buttons">
-                                <label class="btn btn-label btn-sm mb-0">
-                                    <input type="radio" name="options" id="c1-nv-on" autocomplete="off"> روشن
-                                </label>
-                                <label class="btn btn-label btn-sm mb-0 active">
-                                    <input type="radio" name="options" id="c1-nv-off" autocomplete="off" checked="checked"> خاموش
-                                </label>
-                            </div>
-                        </li>
+
                     </ul>
                     <!-- Volume control - range slider START -->
-                    <ul class="list-group borderless px-1" data-rangeslider="tv-volume-1">
-                        <li class="list-group-item">
-                            <p class="specs">صدا</p>
-                            <p class="ml-auto mb-0"><span class="range-output">45</span>%</p>
-                        </li>
-                        <li class="list-group-item pt-0 pb-4">
-                            <input type="range" class="form-range" id="tv-volume-1">
+                    <form action="{{route('tvVolumeUpdate',$tv->id)}}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <ul class="list-group borderless px-1" data-rangeslider="tv-volume-{{$tv->id}}">
+                            <li class="list-group-item">
+                                <p class="specs">صدا</p>
+                                <p class="ml-auto mb-0"><span class="range-output">{{ $tv->volume }}</span>%</p>
+                            </li>
+                            <li class="list-group-item pt-0 pb-4">
+                                <input type="range" name="dimer" class="form-range" id="tv-volume-{{ $tv->id }}" onchange="this.form.submit()">
 
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </form>
                     <!-- Volume control - range slider END -->
                 </div>
             </div>
-            <!-- TV2  END -->
+
         </div>
+        @endforeach
+        <!-- TV  END -->
+
         <!-- Appliances  END -->
     </div>
 </div>
