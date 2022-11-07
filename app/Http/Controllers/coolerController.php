@@ -87,7 +87,20 @@ class coolerController extends Controller
     {
 
         $DesiredTemperature = ($request->desiredTemperature);
+        $currentTemperature = ($request->currentTemperature);
+        if ($DesiredTemperature < $currentTemperature) {
+            $nextStatus = (\true);
 
+            DB::table('coolers')->where('id', $id)->update(
+                ['status' => $nextStatus]
+            );
+        } else {
+            $nextStatus = (\false);
+
+            DB::table('coolers')->where('id', $id)->update(
+                ['status' => $nextStatus]
+            );
+        }
         DB::table('coolers')->where('id', $id)->update(
             ['desiredTemperature' => $DesiredTemperature]
         );

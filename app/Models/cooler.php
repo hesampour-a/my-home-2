@@ -10,6 +10,7 @@ class cooler extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'status',
         'persianName',
         'desiredTemperature',
         'currentTemperature',

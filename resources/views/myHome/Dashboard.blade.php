@@ -17,7 +17,7 @@
 
                         <h5>{{ $inLamp->persianName }}</h5>
                         <label class="switch ml-auto">
-                            <form action="{{route('inLampUpdateStatus',$inLamp->id)}}" method="POST">
+                            <form action="{{route('inLampsUpdateStatusDashboard',$inLamp->id)}}" method="POST">
                                 @csrf
                                 @method('PATCH')
                                 <input type="checkbox" id="switch-light-{{ $inLamp->id }}" {{ $inLamp->status === '1' ? 'checked' : '' }} onchange="this.form.submit()">
@@ -44,7 +44,7 @@
 
                     <h5>{{$outLamp->persianName}}</h5>
                     <label class="switch ml-auto">
-                        <form action="{{route('outLampUpdateStatus',$outLamp->id)}}" method="POST">
+                        <form action="{{route('outLampsUpdateStatusDashboard',$outLamp->id)}}" method="POST">
                             @csrf
                             @method('PATCH')
                             <input type="checkbox" id="switch-light-{{ $outLamp->id }}" {{ $outLamp->status === '1' ? 'checked' : '' }} onchange="this.form.submit()">
@@ -147,7 +147,7 @@
 
                     <h5>{{$camera->persianName}}</h5>
                     <label class="switch ml-auto">
-                        <form action="{{route('camerasUpdateStatus',$camera->id)}}" method="POST">
+                        <form action="{{route('camerasUpdateStatusDashboard',$camera->id)}}" method="POST">
                             @csrf
                             @method('PATCH')
                             <input type="checkbox" id="switch-camera-{{$camera->id}}" {{$camera->status ? 'ckecked':''}} onchange="this.form.submit()">

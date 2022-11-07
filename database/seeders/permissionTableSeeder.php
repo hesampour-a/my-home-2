@@ -18,7 +18,15 @@ class PermissionTableSeeder extends Seeder
             'user-create',
             'user-edit',
             'user-delete',
-            'user-update-status'
+            'user-update-status',
+            'light-status',
+            'camera-status',
+            'tv-status',
+            'tv-volume',
+            'cooler-dim',
+            'fan-dim',
+            'cooler-status',
+            'fan-status',
         ];
 
         foreach ($permissions as $permission) {

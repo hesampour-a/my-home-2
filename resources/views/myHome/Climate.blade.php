@@ -35,6 +35,8 @@
                             @csrf
                             @method('PATCH')
                             <input type="range" name="desiredTemperature" class="form-range room-temp" id="room-temp-0{{ $cooler->id }}" min="19" max="30" step="1" value="24" data-orientation="vertical" onchange="this.form.submit()">
+                            <input id="currentTemperature" name="currentTemperature" value={{ $cooler->currentTemperature }} hidden>
+                            <input id="status" name="status" value={{ $cooler->status }} hidden>
                         </form>
                     </div>
                 </div>

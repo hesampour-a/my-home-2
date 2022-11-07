@@ -9,6 +9,7 @@ use App\Models\outLamp;
 use App\Models\tv;
 use App\Models\washingMachine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class dashboardController extends Controller
 {
@@ -23,5 +24,35 @@ class dashboardController extends Controller
 
 
         return view('myHome.Dashboard', compact('fridges', 'tvs', 'washingMachines', 'cameras', 'inLamps', 'outLamps'));
+    }
+    public function updateStatus_inLamp(Request $request, $id)
+    {
+
+        $nextStatus = (!$request->status);
+
+        DB::table('in_lamps')->where('id', $id)->update(
+            ['status' => $nextStatus]
+        );
+        return \redirect()->route('dashboard');
+    }
+    public function updateStatus_outLamp(Request $request, $id)
+    {
+
+        $nextStatus = (!$request->status);
+
+        DB::table('out_lamps')->where('id', $id)->update(
+            ['status' => $nextStatus]
+        );
+        return \redirect()->route('dashboard');
+    }
+    public function updateStatus_camera(Request $request, $id)
+    {
+
+        $nextStatus = (!$request->status);
+
+        DB::table('cameras')->where('id', $id)->update(
+            ['status' => $nextStatus]
+        );
+        return \redirect()->route('dashboard');
     }
 }

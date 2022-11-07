@@ -8,22 +8,22 @@
 
     <!-- Interior lights START -->
     <div class="row" data-unit-group="switch-lights-in">
+        <!-- ON/OFF all interior lights  START -->
         <div class="col-sm-12 col-md-6 col-xl-4">
-            <!-- ON/OFF all interior lights  START -->
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">لامپ های داخل</h3>
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <!-- <div class="card-body">
                     <div class="lights-controls" data-controls="switch-lights-in">
                         <button data-action="all-on" type="button" class="btn btn-secondary lights-control">همه <strong>روشن</strong></button>
                         <button data-action="all-off" type="button" class="btn btn-primary lights-control">همه <strong>خاموش</strong></button>
                     </div>
-                </div>
+                </div> -->
             </div>
-            <!-- ON/OFF all interior lights  END -->
         </div>
+        <!-- ON/OFF all interior lights  END -->
         @foreach ($inLamps as $inLamp)
 
         <div class="col-sm-12 col-md-6 col-xl-4">
@@ -34,6 +34,7 @@
                     <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Bulb eco.svg') }}" alt="Cameras">
 
                     <h5>{{ $inLamp->persianName }}</h5>
+
                     <label class="switch ml-auto checked">
 
                         <form action="{{route('inLampUpdateStatus',$inLamp->id)}}" method="POST">
@@ -43,6 +44,8 @@
                             <input id="status" name="status" value={{ $inLamp->status }} hidden>
                         </form>
                     </label>
+
+
                 </div>
                 <!-- Light switch END -->
                 <hr class="my-0">

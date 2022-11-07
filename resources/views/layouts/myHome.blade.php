@@ -19,154 +19,14 @@
 
 <body>
 
-    <!-- Preloader START -->
-    <div id="iot-preloader" style="display: none;">
-        <div class="center-preloader d-flex align-items-center">
-            <div class="spinners">
-                <div class="spinner01"></div>
-                <div class="spinner02"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader END -->
 
-    <!-- Alerts Modal START -->
-    <div class="modal modal-nobg centered fade" id="alertsModal" tabindex="-1" role="dialog" aria-label="Alerts" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="alert alert-danger alert-dismissible fade show border-0" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button> Security SW update available
-                    </div>
-                    <div class="alert alert-warning alert-dismissible fade show border-0" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button> New device recognized
-                    </div>
-                    <div class="alert alert-warning alert-dismissible fade show border-0" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button> User profile is not complete
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <!-- Alerts Modal END -->
 
-    <!-- Arming Modal START -->
-    <div class="modal modal-warning centered fade" id="armModal" tabindex="-1" role="dialog" aria-label="Arming" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div id="armTimer">
-                        <h3 class="font-weight-bold">EXIT NOW! <span class="timer font-weight-normal"></span></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <!-- Arming Modal END -->
 
-    <!-- Arming Modal with key START -->
-    <div class="modal modal-nobg centered fade" id="armModalPIN" tabindex="-1" role="dialog" aria-label="Arming/Disarming" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="keyboard">
-                        <div class="row">
-                            <div class="col-12 p-2">
-                                <h3 id="hidden-key">&nbsp;</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">1</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">2</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">3</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">4</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">5</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">6</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">7</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">8</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">9</button>
-                            </div>
-                            <div class="col-4 p-2">
-                                <button data-action="enter-key" type="button" class="btn btn-outline-primary btn-lg">0</button>
-                            </div>
-                            <div class="col-8 p-2">
-                                <button data-action="clear-key" type="button" class="btn btn-outline-secondary btn-lg w-100">CLEAR</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 p-2">
-                                <p class="">Enter any 4 numbers :)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button id="cancel-keyboard" type="button" class="close close-modal">
-            <span>×</span>
-        </button>
-    </div>
-    <!-- Arming Modal with key END -->
 
-    <!-- Alarm Modal START -->
-    <div class="modal modal-danger centered fade" id="alarmModal" tabindex="-1" role="dialog" aria-label="ALARM" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" data-dismiss="modal">
-                <div class="modal-body d-flex">
-                    <svg class="icon-sprite icon-2x icon-pulse">
-                        <use xlink:href="SmartHome/assets/svg/icons-sprite.svg#alarm"></use>
-                    </svg>
-                    <h3 class="text-right font-weight-bold ml-auto align-self-center">MOTION DETECTED!</h3>
-                </div>
-            </div>
-            <p class="mt-2 text-center text-danger">Click the red area to accept/close message</p>
-        </div>
-    </div>
-    <!-- Alarm Modal END -->
 
-    <!-- Fire Alarm Modal START -->
-    <div class="modal modal-danger centered fade" id="fire-alarmModal" tabindex="-1" role="dialog" aria-label="FIRE ALARM" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" data-dismiss="modal">
-                <div class="modal-body d-flex">
-                    <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Fire.svg') }}" alt="Cameras">
 
-                    <h3 class="text-right font-weight-bold ml-auto align-self-center">SMOKE DETECTED!</h3>
-                </div>
-            </div>
-            <p class="mt-2 text-center text-danger">Click the red area to accept/close message</p>
-        </div>
-    </div>
-    <!-- Fire Alarm Modal END -->
+
+
 
     <!-- Wrapper START -->
     <div id="wrapper" class="">
@@ -174,11 +34,11 @@
         <!-- Top navbar START -->
         <nav class="navbar fixed-top border-bottom">
             <a class="navbar-brand pt-0 px-lg-3 px-1 mr-0" href="#"><img src="{{ asset('SmartHome/assets/svg/icon.png') }}" alt="My Home" style="width: 40px"></a>
-            <div class="ml-auto">
+            <!-- <div class="ml-auto">
                 <div class="navbar-nav navbar-icons flex-row">
                     <div class="nav-item">
-                        <button id="alerts-toggler" class="btn btn-link nav-link" title="Alerts" type="button" data-alerts="3" data-toggle="modal" data-target="#alertsModal">
-                            <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/alert.svg') }}" alt="alert">
+                        <button id="alerts-toggler" class="btn btn-link nav-link" title="user" type="button" data-alerts="3" data-toggle="modal" data-target="#alertsModal">
+                            <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/user.png') }}" alt="user">
                         </button>
                     </div>
                     <div class="nav-item">
@@ -193,7 +53,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </nav>
         <!-- Top navbar END -->
 
@@ -252,11 +112,11 @@
     <!-- Wrapper END -->
 
     <!-- FAB button - bottom right on large screens -->
-    <button id="info-toggler" type="button" class="btn btn-primary btn-fab btn-fixed-br d-none d-lg-inline-block">
+    <!-- <button id="info-toggler" type="button" class="btn btn-primary btn-fab btn-fixed-br d-none d-lg-inline-block">
         <svg class="icon-sprite">
             <use xlink:href="SmartHome/assets/svg/icons-sprite.svg#info"></use>
         </svg>
-    </button>
+    </button> -->
 
     <!-- jQuery -->
     <script src="{{ asset('SmartHome/assets/js/jquery-3.4.1.min.js') }}" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

@@ -82,3 +82,7 @@ Route::patch('fridge/fridgeTeperatureUpdate/{id}', [fridgeController::class, 'Up
 
 Route::patch('tv/updateStatus/{id}', [tvController::class, 'updateStatus'])->name('tvStatusUpdate');
 Route::patch('tv/tvVolumeUpdate/{id}', [tvController::class, 'UpdateDim'])->name('tvVolumeUpdate');
+
+Route::patch('cameras/updateStatusDashboard/{id}', [dashboardController::class, 'updateStatus_inLamp'])->name('camerasUpdateStatusDashboard');
+Route::patch('inLamps/updateStatusDashboard/{id}', [dashboardController::class, 'updateStatus_outLamp'])->name('inLampsUpdateStatusDashboard');
+Route::patch('outLamps/updateStatusDashboard/{id}', [dashboardController::class, 'updateStatus_camera'])->name('outLampsUpdateStatusDashboard');

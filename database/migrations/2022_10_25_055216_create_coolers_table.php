@@ -15,6 +15,7 @@ class CreateCoolersTable extends Migration
     {
         Schema::create('coolers', function (Blueprint $table) {
             $table->id();
+            $table->boolean('status')->default(0);
             $table->string('name')->nullable();
             $table->string('persianName')->nullable();
             $table->integer('currentTemperature')->nullable();
