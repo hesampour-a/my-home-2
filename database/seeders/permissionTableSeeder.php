@@ -20,6 +20,8 @@ class PermissionTableSeeder extends Seeder
             'user-delete',
             'user-update-status',
             'light-status',
+            'light-dim',
+            'fridge-dim',
             'camera-status',
             'tv-status',
             'tv-volume',

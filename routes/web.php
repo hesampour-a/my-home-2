@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\adminInLightController;
+
+use App\Http\Controllers\adminOutLightController;
 use App\Http\Controllers\appliancesController;
 use App\Http\Controllers\cameraController;
 use App\Http\Controllers\climateController;
@@ -49,6 +52,8 @@ Route::prefix('/modir')->middleware('role:Admin')->group(function () {
     //     return view('admin.createUser');
     // });
     Route::resource('roles', RoleController::class);
+    Route::resource('adminInLights', adminInLightController::class);
+    Route::resource('adminOutLights', adminOutLightController::class);
 
     Route::patch('users/updateStatus/{id}', [UserController::class, 'updateStatus'])->name('users.updateStatus');
     Route::resource('users', UserController::class);
@@ -56,11 +61,11 @@ Route::prefix('/modir')->middleware('role:Admin')->group(function () {
 
 
 
-Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
-Route::get('/cameras', [cameraController::class, 'index'])->name('cameras');
-Route::get('/lights', [lightController::class, 'index'])->name('lights');
-Route::get('/climate', [climateController::class, 'index'])->name('climate');
-Route::get('/appliances', [appliancesController::class, 'index'])->name('appliances');
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard')->middleware('EnsureLogin');
+Route::get('/cameras', [cameraController::class, 'index'])->name('cameras')->middleware('EnsureLogin');
+Route::get('/lights', [lightController::class, 'index'])->name('lights')->middleware('EnsureLogin');
+Route::get('/climate', [climateController::class, 'index'])->name('climate')->middleware('EnsureLogin');
+Route::get('/appliances', [appliancesController::class, 'index'])->name('appliances')->middleware('EnsureLogin');
 
 
 

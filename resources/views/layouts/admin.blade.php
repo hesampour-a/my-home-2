@@ -131,6 +131,8 @@ desired effect
                     </li>
 
                     <li><a href="{{ route('roles.index') }}"><i class="fa fa-link"></i> <span>مدیریت سطح دسترسی</span></a></li>
+                    <li><a href="{{ route('adminInLights.index') }}"><i class="fa fa-link"></i> <span>مدیریت لامپ های داخل</span></a></li>
+                    <li><a href="{{ route('adminOutLights.index') }}"><i class="fa fa-link"></i> <span>مدیریت لامپ های بیرون</span></a></li>
 
 
                 </ul>

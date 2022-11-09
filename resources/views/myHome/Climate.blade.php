@@ -30,6 +30,7 @@
 
                         </li>
                     </ul>
+                    @if(auth()->user()->can('cooler-dim'))
                     <div class="p-4" style="position:relative;">
                         <form action="{{route('coolerDesiredTemperatureUpdate',$cooler->id)}}" method="POST">
                             @csrf
@@ -39,6 +40,7 @@
                             <input id="status" name="status" value={{ $cooler->status }} hidden>
                         </form>
                     </div>
+                    @endif
                 </div>
             </div>
             <!-- Living room temperature  END -->
@@ -56,6 +58,7 @@
                         <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Fan.svg') }}" alt="Cameras">
 
                         <h5>{{ $fan->persianName }}</h5>
+                        @if(auth()->user()->can('fan-status'))
                         <label class="switch ml-auto checked">
                             <form action="{{route('fanUpdateStatus',$fan->id)}}" method="POST">
                                 @csrf
@@ -64,6 +67,7 @@
                                 <input id="status" name="status" value={{ $fan->status }} hidden>
                             </form>
                         </label>
+                        @endif
                     </li>
                 </ul>
                 <!-- FAN Kitchen switch END -->
@@ -76,6 +80,7 @@
                         </li>
                     </ul>
                     <!-- Speed control - range slider START -->
+                    @if(auth()->user()->can('fan-dim'))
                     <form action="{{route('fanSpeedUpdate',$fan->id)}}" method="POST">
                         @csrf
                         @method('PATCH')
@@ -90,7 +95,7 @@
                             </li>
                         </ul>
                     </form>
-
+                    @endif
                     <!-- Speed control - range slider END -->
                 </div>
             </div>

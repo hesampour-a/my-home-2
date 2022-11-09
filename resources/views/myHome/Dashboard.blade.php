@@ -16,6 +16,7 @@
                         <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Bulb eco.svg') }}" alt="Cameras">
 
                         <h5>{{ $inLamp->persianName }}</h5>
+                        @if(auth()->user()->can('light-status'))
                         <label class="switch ml-auto">
                             <form action="{{route('inLampsUpdateStatusDashboard',$inLamp->id)}}" method="POST">
                                 @csrf
@@ -24,6 +25,7 @@
                                 <input id="status" name="status" value={{ $inLamp->status }} hidden>
                             </form>
                         </label>
+                        @endif
                         <div class="info-holder info-rb" style="right:40px;">
                             <div data-toggle="popover-all" data-content="Checkbox element using localStorage to remember the last status." data-original-title="Switch ON/OFF" data-container="body" data-placement="top" data-offset="0,-6"></div>
                         </div>
@@ -43,6 +45,7 @@
                     <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Bulb eco.svg') }}" alt="Cameras">
 
                     <h5>{{$outLamp->persianName}}</h5>
+                    @if(auth()->user()->can('light-status'))
                     <label class="switch ml-auto">
                         <form action="{{route('outLampsUpdateStatusDashboard',$outLamp->id)}}" method="POST">
                             @csrf
@@ -51,6 +54,7 @@
                             <input id="status" name="status" value={{ $outLamp->status }} hidden>
                         </form>
                     </label>
+                    @endif
                 </div>
             </div>
             @endforeach
@@ -146,6 +150,7 @@
                     <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Camera.svg') }}" alt="Cameras">
 
                     <h5>{{$camera->persianName}}</h5>
+                    @if(auth()->user()->can('camera-status'))
                     <label class="switch ml-auto">
                         <form action="{{route('camerasUpdateStatusDashboard',$camera->id)}}" method="POST">
                             @csrf
@@ -155,6 +160,7 @@
 
                         </form>
                     </label>
+                    @endif
                 </div>
             </div>
 

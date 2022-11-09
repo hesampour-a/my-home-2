@@ -39,6 +39,7 @@
                     <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Camera.svg') }}" alt="Cameras">
 
                     <h5>{{$camera->persianName}}</h5>
+                    @if(auth()->user()->can('camera-status'))
                     <label class="switch ml-auto">
                         <form action="{{route('camerasUpdateStatus',$camera->id)}}" method="POST">
                             @csrf
@@ -48,6 +49,7 @@
 
                         </form>
                     </label>
+                    @endif
                 </div>
                 <!-- Camera switch END -->
                 <hr class="my-0">

@@ -65,6 +65,7 @@
                             </p>
                         </li>
                     </ul>
+                    @if(auth()->user()->can('fridge-dim'))
                     <div class="p-4" style="position:relative;">
                         <form action="{{route('fridgeTeperatureUpdate',$fridge->id)}}" method="POST">
                             @csrf
@@ -72,6 +73,7 @@
                             <input type="range" name='dimer' class="form-range" id="fridge-temp" min="1" max="20" step="1" value="{{$fridge->temperature}}" data-orientation="vertical" onchange="this.form.submit()">
                         </form>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -87,6 +89,7 @@
                         <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/LCD TV.svg') }}" alt="Cameras">
 
                         <h5>{{$tv->persianName}}</h5>
+                        @if(auth()->user()->can('tv-status'))
                         <label class="switch ml-auto checked">
                             <form action="{{route('tvStatusUpdate',$tv->id)}}" method="POST">
                                 @csrf
@@ -95,6 +98,7 @@
                                 <input id="status" name="status" value={{ $tv->status }} hidden>
                             </form>
                         </label>
+                        @endif
                     </li>
                 </ul>
 
@@ -108,6 +112,7 @@
 
                     </ul>
                     <!-- Volume control - range slider START -->
+                    @if(auth()->user()->can('tv-volume'))
                     <form action="{{route('tvVolumeUpdate',$tv->id)}}" method="POST">
                         @csrf
                         @method('PATCH')
@@ -122,6 +127,7 @@
                             </li>
                         </ul>
                     </form>
+                    @endif
                     <!-- Volume control - range slider END -->
                 </div>
             </div>

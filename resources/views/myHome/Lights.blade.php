@@ -1,8 +1,8 @@
 @extends('layouts.myHome')
 
 @section('content')
-<div class="container-fluid px-4 px-sm-5">
 
+<div class="container-fluid px-4 px-sm-5">
 
 
 
@@ -35,6 +35,7 @@
 
                     <h5>{{ $inLamp->persianName }}</h5>
 
+                    @if(auth()->user()->can('light-status'))
                     <label class="switch ml-auto checked">
 
                         <form action="{{route('inLampUpdateStatus',$inLamp->id)}}" method="POST">
@@ -44,6 +45,8 @@
                             <input id="status" name="status" value={{ $inLamp->status }} hidden>
                         </form>
                     </label>
+                    @endif
+
 
 
                 </div>
@@ -69,13 +72,14 @@
                     </li>
                 </ul>
                 <!-- Bulb details END -->
+
+                @if(auth()->user()->can('light-dim'))
                 <hr class="my-0">
+
                 <!-- Dimmer control - range slider START -->
                 <form action="{{route('inLampUpdateDim',$inLamp->id)}}" method="POST">
                     @csrf
                     @method('PATCH')
-
-
                     <ul class="list-group borderless px-1" data-rangeslider="dimmer-light-{{$inLamp->id}}">
                         <li class="list-group-item">
                             <p class="specs">قدرت</p>
@@ -87,6 +91,7 @@
                         </li>
                     </ul>
                 </form>
+                @endif
 
                 <!-- Dimmer control - range slider END -->
             </div>
@@ -122,7 +127,7 @@
                                     <img class="icon-sprite" src="{{ asset('SmartHome/assets/svg/Bulb eco.svg') }}" alt="Cameras">
 
                                     <h5>{{$outLamp->persianName}}</h5>
-
+                                    @if(auth()->user()->can('light-status'))
                                     <label class="switch ml-auto">
                                         <form action="{{route('outLampUpdateStatus',$outLamp->id)}}" method="POST">
                                             @csrf
@@ -132,6 +137,7 @@
 
                                         </form>
                                     </label>
+                                    @endif
                                 </div>
                                 <!-- Light switch END -->
                                 <hr class="my-0">
